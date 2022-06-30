@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metropole/app/routes/app.routes.dart';
 import 'package:provider/provider.dart';
 import 'package:metropole/app/constants/app.assets.dart';
 import 'package:metropole/app/constants/app.colors.dart';
@@ -78,7 +79,8 @@ class ProductScreen extends StatelessWidget {
                                     ),
                                   ),
                                   onPressed: () {
-                                    
+                                    Navigator.of(context)
+                                        .pushNamed(AppRouter.gameRoute);
                                   },
                                   child: Text(
                                     'Ойноо',

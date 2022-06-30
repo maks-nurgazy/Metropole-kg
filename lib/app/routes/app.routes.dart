@@ -2,6 +2,7 @@ import 'package:concentric_transition/concentric_transition.dart';
 import 'package:flutter/material.dart';
 import 'package:metropole/presentation/screens/cartScreen/cart.screen.dart';
 import 'package:metropole/presentation/screens/categoryScreen/category.screen.dart';
+import 'package:metropole/presentation/screens/gameScreen/game.screen.dart';
 import 'package:metropole/presentation/screens/homeScreen/home.screen.dart';
 import 'package:metropole/presentation/screens/loginScreen/login.view.dart';
 import 'package:metropole/presentation/screens/onBoardingScreen/onBoarding.screen.dart';
@@ -32,6 +33,7 @@ class AppRouter {
   static const String prodDetailRoute = "/productDetail";
   static const String editProfileRoute = "/editProfile";
   static const String changePassRoute = "/changePassword";
+  static const String gameRoute = "/game";
 
   static Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -93,6 +95,12 @@ class AppRouter {
                   .arguments as ProductDetailsArgs,
             ),
             settings: settings,
+          );
+        }
+      case gameRoute:
+        {
+          return MaterialPageRoute(
+            builder: (_) => const GameScreen(),
           );
         }
       case cartRoute:
