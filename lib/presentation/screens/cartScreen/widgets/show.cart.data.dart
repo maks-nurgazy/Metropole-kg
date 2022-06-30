@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metropole/app/routes/app.routes.dart';
 import 'package:provider/provider.dart';
 import 'package:metropole/app/constants/app.colors.dart';
 import 'package:metropole/core/models/cart.model.dart';
@@ -75,8 +76,7 @@ Widget cartPrice({
           borderRadius: BorderRadius.circular(8),
         ),
         onPressed: () async {
-          Provider.of<PaymentService>(context, listen: false)
-              .checkMeOut(context: context, cartPrice: cartPrice);
+          Navigator.of(context).pushNamed(AppRouter.paymentRoute);
         },
         color: AppColors.rawSienna,
         child: const Text(

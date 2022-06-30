@@ -6,6 +6,7 @@ import 'package:metropole/presentation/screens/gameScreen/game.screen.dart';
 import 'package:metropole/presentation/screens/homeScreen/home.screen.dart';
 import 'package:metropole/presentation/screens/loginScreen/login.view.dart';
 import 'package:metropole/presentation/screens/onBoardingScreen/onBoarding.screen.dart';
+import 'package:metropole/presentation/screens/paymentScreen/payment.screen.dart';
 import 'package:metropole/presentation/screens/productDetailScreen/product.detail.screen.dart';
 import 'package:metropole/presentation/screens/productScreen/product.screen.dart';
 import 'package:metropole/presentation/screens/profileScreens/accountInformationScreen/account.information.screen.dart';
@@ -34,6 +35,7 @@ class AppRouter {
   static const String editProfileRoute = "/editProfile";
   static const String changePassRoute = "/changePassword";
   static const String gameRoute = "/game";
+  static const String paymentRoute = "/payment";
 
   static Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -101,6 +103,13 @@ class AppRouter {
         {
           return MaterialPageRoute(
             builder: (_) => const GameScreen(),
+          );
+        }
+
+      case paymentRoute:
+        {
+          return MaterialPageRoute(
+            builder: (_) => const PaymentScreen(),
           );
         }
       case cartRoute:
