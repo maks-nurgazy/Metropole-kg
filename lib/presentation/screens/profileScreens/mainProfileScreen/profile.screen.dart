@@ -47,6 +47,26 @@ class ProfileScreen extends StatelessWidget {
                     context: context,
                     themeFlag: themeFlag,
                   ),
+                  const SizedBox(height: 10),
+                  Card(
+                    child: const ListTile(
+                      title: Text("Топтолгон упай"),
+                      trailing: Text(
+                        '20',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    elevation: 8,
+                    shadowColor: Colors.green,
+                    // margin: const EdgeInsets.all(20),
+                    shape: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide:
+                            const BorderSide(color: Colors.green, width: 1)),
+                  ),
+                  const SizedBox(height: 20),
                   GestureDetector(
                     behavior: HitTestBehavior.translucent,
                     onTap: () {
