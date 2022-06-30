@@ -12,20 +12,6 @@ Widget welcomeTextSignup({required bool themeFlag}) {
       vSizedBox4,
       vSizedBox1,
       Padding(
-        padding: const EdgeInsets.fromLTRB(35.0, 10.0, 35.0, 2.0),
-        child: RichText(
-          text: TextSpan(
-            text: 'Hey There 😲',
-            style: TextStyle(
-              color: themeFlag ? AppColors.creamColor : AppColors.mirage,
-              fontWeight: FontWeight.w900,
-              fontFamily: AppFonts.contax,
-              fontSize: 35.0,
-            ),
-          ),
-        ),
-      ),
-      Padding(
         padding: const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
         child: RichText(
           text: TextSpan(
@@ -33,7 +19,7 @@ Widget welcomeTextSignup({required bool themeFlag}) {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Welcome To ',
+                    text: 'Катталуу ',
                     style: TextStyle(
                       color:
                           themeFlag ? AppColors.creamColor : AppColors.mirage,
@@ -43,7 +29,7 @@ Widget welcomeTextSignup({required bool themeFlag}) {
                     ),
                   ),
                   TextSpan(
-                    text: 'Scarvs ! 🛒  ',
+                    text: 'баракчасы !  ',
                     style: TextStyle(
                       color:
                           themeFlag ? AppColors.creamColor : AppColors.mirage,
@@ -66,14 +52,7 @@ Widget welcomeTextSignup({required bool themeFlag}) {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: "Signup ",
-                    style: CustomTextWidget.bodyTextB4(
-                      color:
-                          themeFlag ? AppColors.creamColor : AppColors.mirage,
-                    ),
-                  ),
-                  TextSpan(
-                    text: "& Buy Shoes At Rock Bottom Prices",
+                    text: "Боштуктарды толтурунуз",
                     style: CustomTextWidget.bodyTextB4(
                       color:
                           themeFlag ? AppColors.creamColor : AppColors.mirage,

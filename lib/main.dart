@@ -36,7 +36,7 @@ class Core extends StatelessWidget {
           theme: notifier.darkTheme ? darkTheme : lightTheme,
           debugShowCheckedModeBanner: false,
           onGenerateRoute: AppRouter.generateRoute,
-          initialRoute: AppRouter.splashRoute,
+          initialRoute: AppRouter.signUpRoute,
         );
       },
     );

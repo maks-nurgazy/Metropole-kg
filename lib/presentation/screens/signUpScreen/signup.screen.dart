@@ -136,7 +136,7 @@ class SignUpScreen extends StatelessWidget {
                     },
                     color: AppColors.rawSienna,
                     child: const Text(
-                      'Sign Up',
+                      'Катталуу',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 17,
