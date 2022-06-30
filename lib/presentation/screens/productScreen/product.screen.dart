@@ -20,7 +20,6 @@ class ProductScreen extends StatelessWidget {
     var themeFlag = _themeNotifier.darkTheme;
 
     UserNotifier _userData = Provider.of<UserNotifier>(context);
-    var userName = _userData.getUserName ?? ' ';
     return SafeArea(
       child: Scaffold(
         backgroundColor: themeFlag ? AppColors.mirage : AppColors.creamColor,
@@ -32,21 +31,6 @@ class ProductScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Hi , $userName',
-                      style: CustomTextWidget.bodyTextB1(
-                        color:
-                            themeFlag ? AppColors.creamColor : AppColors.mirage,
-                      ),
-                    ),
-                    vSizedBox1,
-                    Text(
-                      'What Would You Like To Wear Today ??',
-                      style: CustomTextWidget.bodyText3(
-                        color:
-                            themeFlag ? AppColors.creamColor : AppColors.mirage,
-                      ),
-                    ),
                     vSizedBox2,
                     Container(
                       decoration: BoxDecoration(
@@ -61,7 +45,7 @@ class ProductScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      height: MediaQuery.of(context).size.height * 0.20,
+                      height: MediaQuery.of(context).size.height * 0.22,
                       width: MediaQuery.of(context).size.width,
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(15, 10, 5, 0),
@@ -69,12 +53,12 @@ class ProductScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Pamper Your Feet ',
+                              'Мини оюндар ',
                               style: CustomTextWidget.bodyTextB2(
                                   color: AppColors.creamColor),
                             ),
                             Text(
-                              'With our shoes',
+                              'Упай топтоо учун ойноо',
                               style: CustomTextWidget.bodyTextB3(
                                   color: AppColors.creamColor),
                             ),
@@ -93,9 +77,11 @@ class ProductScreen extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(5.0),
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    
+                                  },
                                   child: Text(
-                                    'Check',
+                                    'Ойноо',
                                     style: CustomTextWidget.bodyText3(
                                       color: AppColors.mirage,
                                     ),
@@ -125,7 +111,7 @@ class ProductScreen extends StatelessWidget {
                     ),
                     vSizedBox1,
                     SizedBox(
-                      height: 200,
+                      height: 210,
                       width: MediaQuery.of(context).size.width,
                       child: Consumer<ProductNotifier>(
                         builder: (context, notifier, _) {

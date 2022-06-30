@@ -53,11 +53,11 @@ class LoginScreen extends StatelessWidget {
                               const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
                           child: CustomTextField.customTextField(
                             textEditingController: userEmailController,
-                            hintText: 'Enter an email',
+                            hintText: 'Сиздин email',
                             validator: (val) =>
                                 !RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
                                         .hasMatch(val!)
-                                    ? 'Enter an email'
+                                    ? 'Сиздин email'
                                     : null,
                           ),
                         ),
@@ -67,9 +67,9 @@ class LoginScreen extends StatelessWidget {
                               const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
                           child: CustomTextField.customTextField(
                             textEditingController: userPassController,
-                            hintText: 'Enter a password',
+                            hintText: 'Сыр созунуз',
                             validator: (val) =>
-                                val!.isEmpty ? 'Enter a password' : null,
+                                val!.isEmpty ? 'Сыр созунуз' : null,
                           ),
                         )
                       ],
@@ -87,7 +87,7 @@ class LoginScreen extends StatelessWidget {
                     },
                     color: AppColors.rawSienna,
                     child: const Text(
-                      'LOGIN',
+                      'Кируу',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 17,
@@ -103,7 +103,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Not Having A Account? ",
+                  "Аккаунт жокпу? ",
                   style: TextStyle(
                     color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                     fontSize: 14.0,
@@ -113,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                   onTap: () =>
                       Navigator.of(context).pushNamed(AppRouter.signUpRoute),
                   child: Text(
-                    "Sign up",
+                    "Катталуу",
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                       color:
