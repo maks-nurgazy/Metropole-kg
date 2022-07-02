@@ -13,6 +13,9 @@ class AppAssets {
 
   static const String brandJordan =
       'http://assets.stickpng.com/images/584292c4a6515b1e0ad75aca.png';
+  static const String joystickImage =
+      'https://vinyllab.ru/wp-content/uploads/2021/06/13973.png';
+
   static const String brandReebok =
       'https://www.pngall.com/wp-content/uploads/8/Reebok-Logo-Transparent.png';
   static const String brandNike =

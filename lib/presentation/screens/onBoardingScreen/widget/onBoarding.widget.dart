@@ -7,10 +7,9 @@ import 'package:metropole/presentation/widgets/dimensions.widget.dart';
 class PageCard extends StatelessWidget {
   final OnBoardingModel card;
 
-  const PageCard({
-    Key? key,
+  PageCard({
     required this.card,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

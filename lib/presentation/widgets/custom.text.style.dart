@@ -16,7 +16,7 @@ class CustomTextWidget {
       fontFamily: AppFonts.contax,
       color: color,
       fontWeight: FontWeight.w900,
-      fontSize: 20.0,
+      fontSize: 24.0,
     );
   }
 
@@ -25,7 +25,7 @@ class CustomTextWidget {
       fontFamily: AppFonts.contax,
       color: color,
       fontWeight: FontWeight.w900,
-      fontSize: 16.0,
+      fontSize: 14.0,
     );
   }
 

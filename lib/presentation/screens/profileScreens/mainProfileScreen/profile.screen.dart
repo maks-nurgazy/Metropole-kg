@@ -18,6 +18,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeNotifier _themeNotifier = Provider.of<ThemeNotifier>(context);
+
     var themeFlag = _themeNotifier.darkTheme;
     return SafeArea(
       child: Scaffold(
@@ -31,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
                   themeFlag: themeFlag,
                 ),
                 Text(
-                  'Profile',
+                  'Профиль',
                   style: CustomTextWidget.bodyTextB2(
                     color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                   ),
@@ -79,7 +80,7 @@ class ProfileScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Update Info',
+                            'Маалыматты толуктоо',
                             style: TextStyle(
                               fontSize: 15,
                               color: themeFlag
@@ -110,7 +111,7 @@ class ProfileScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Change Password',
+                            'Сыр сөздү өзгөрт',
                             style: TextStyle(
                               fontSize: 15,
                               color: themeFlag
@@ -141,7 +142,7 @@ class ProfileScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Settings',
+                            'Жөндөөлөр',
                             style: TextStyle(
                               fontSize: 15,
                               color: themeFlag
@@ -183,7 +184,7 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(width: 8),
                           Text(
-                            'Sign Out',
+                            'Аккаунттан чыгуу',
                             style: TextStyle(
                               fontSize: 15,
                               color: themeFlag
@@ -281,7 +282,7 @@ class ProfileScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        'Account Information',
+                        'Жеке маалымат',
                         style: TextStyle(
                           fontSize: 14,
                           color: themeFlag

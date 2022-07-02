@@ -32,7 +32,7 @@ class EditProfileScreen extends StatelessWidget {
               children: [
                 CustomBackPop(themeFlag: themeFlag),
                 Text(
-                  'Edit Profile',
+                  'Профилди өзгөрт',
                   style: CustomTextWidget.bodyTextB2(
                     color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                   ),
@@ -47,16 +47,15 @@ class EditProfileScreen extends StatelessWidget {
                   children: [
                     CustomTextField.customTextField(
                       textEditingController: addressController,
-                      hintText: 'Enter Address',
-                      validator: (val) => val!.isEmpty ? 'Enter Address' : null,
+                      hintText: 'Дарек жаз',
+                      validator: (val) => val!.isEmpty ? 'Дарек жаз' : null,
                     ),
                     vSizedBox3,
                     CustomTextField.customTextField(
                       textEditingController: numberController,
-                      hintText: 'Enter Phone No',
-                      validator: (val) => !RegExp(patttern).hasMatch(val!)
-                          ? 'Enter Phone No'
-                          : null,
+                      hintText: 'Номур жаз',
+                      validator: (val) =>
+                          !RegExp(patttern).hasMatch(val!) ? 'Номур жаз' : null,
                     ),
                     vSizedBox3,
                     MaterialButton(
@@ -77,7 +76,7 @@ class EditProfileScreen extends StatelessWidget {
                             if (value) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackUtil.stylishSnackBar(
-                                  text: 'Info Updated',
+                                  text: 'Алмашты',
                                   context: context,
                                 ),
                               );
@@ -86,7 +85,7 @@ class EditProfileScreen extends StatelessWidget {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackUtil.stylishSnackBar(
                                   text:
-                                      'Error Please Try Again , After a While',
+                                      'Ката чыкты. Бир аздан кийин кайра аракет кылып көрүңүз...',
                                   context: context,
                                 ),
                               );
@@ -97,7 +96,7 @@ class EditProfileScreen extends StatelessWidget {
                       },
                       color: AppColors.rawSienna,
                       child: const Text(
-                        'Update',
+                        'Жаңылоо',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,

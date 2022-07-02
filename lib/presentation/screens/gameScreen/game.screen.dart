@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:http/http.dart' as http;
+import 'package:metropole/app/routes/api.routes.dart';
+import 'package:metropole/app/routes/app.routes.dart';
 import 'widgets/fortune_wheel.dart';
 
 class GameScreen extends StatefulWidget {
@@ -53,22 +55,16 @@ class _GameScreenState extends State<GameScreen> {
                           currentBalance.isNegative ? Colors.red : Colors.green,
                       borderRadius: BorderRadius.circular(16)),
                   child: Text(
-                    'Current balance: $currentBalance €',
+                    'Учурдагы упай: $currentBalance MPC',
                     style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontSize: 18),
                   ),
                 ),
-                const SizedBox(
-                  height: 24,
-                ),
-                const Divider(
-                  color: Colors.black87,
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
+                const SizedBox(height: 24),
+                const Divider(color: Colors.black87),
+                const SizedBox(height: 16),
                 Container(
                   height: 80,
                   width: 80,
@@ -76,20 +72,21 @@ class _GameScreenState extends State<GameScreen> {
                       ? currentWheelChild!.foreground
                       : Container(),
                 ),
-                SizedBox(
-                  height: 16,
-                ),
+                const SizedBox(height: 16),
                 SizedBox(
                     width: 350,
                     height: 350,
                     child: FortuneWheel<int>(
                       controller: fortuneWheelController,
                       children: [
-                        _createFortuneWheelChild(-50),
-                        _createFortuneWheelChild(1000),
-                        _createFortuneWheelChild(-50),
-                        _createFortuneWheelChild(-500),
-                        _createFortuneWheelChild(-100),
+                        _createFortuneWheelChild(-2),
+                        _createFortuneWheelChild(10),
+                        _createFortuneWheelChild(-3),
+                        _createFortuneWheelChild(1),
+                        _createFortuneWheelChild(-5),
+                        _createFortuneWheelChild(3),
+                        _createFortuneWheelChild(-10),
+                        _createFortuneWheelChild(2),
                       ],
                     )),
                 const SizedBox(height: 24),
@@ -98,7 +95,7 @@ class _GameScreenState extends State<GameScreen> {
                     child: const Padding(
                       padding: EdgeInsets.all(16),
                       child: Text(
-                        'ROTATE',
+                        'Айлант',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ))
@@ -112,11 +109,11 @@ class _GameScreenState extends State<GameScreen> {
 
   FortuneWheelChild<int> _createFortuneWheelChild(int value) {
     Color color = value.isNegative ? Colors.red : Colors.green;
-    String verb = value.isNegative ? 'Lose' : 'Win';
+    String verb = value.isNegative ? '-' : '+';
     int valueString = value.abs();
 
     return FortuneWheelChild(
-        foreground: _getWheelContentCircle(color, '$verb\n$valueString €'),
+        foreground: _getWheelContentCircle(color, '$verb$valueString MPС'),
         value: value);
   }
 

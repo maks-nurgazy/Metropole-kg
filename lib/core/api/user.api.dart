@@ -58,10 +58,11 @@ class UserAPI {
     return body;
   }
 
-  Future changePassword(
-      {required String userEmail,
-      required String oluserpassword,
-      required String newuserpassword}) async {
+  Future changePassword({
+    required String userEmail,
+    required String oluserpassword,
+    required String newuserpassword,
+  }) async {
     const subUrl = '/auth/change-password';
     final Uri uri = Uri.parse(ApiRoutes.baseurl + subUrl);
     final http.Response response = await client.post(uri,

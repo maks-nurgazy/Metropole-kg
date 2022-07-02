@@ -19,6 +19,7 @@ class FortuneWheelController<T> extends ChangeNotifier {
 
   void setValue(FortuneWheelChild<T> fortuneWheelChild) {
     value = fortuneWheelChild;
+
     notifyListeners();
   }
 

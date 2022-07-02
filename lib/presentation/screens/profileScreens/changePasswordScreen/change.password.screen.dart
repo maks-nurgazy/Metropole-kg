@@ -34,7 +34,7 @@ class ChangePasswordScreen extends StatelessWidget {
               children: [
                 CustomBackPop(themeFlag: themeFlag),
                 Text(
-                  'Change Password',
+                  'Сыр сөздү алмаштыруу',
                   style: CustomTextWidget.bodyTextB2(
                     color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                   ),
@@ -49,16 +49,16 @@ class ChangePasswordScreen extends StatelessWidget {
                   children: [
                     CustomTextField.customTextField(
                       textEditingController: oldPassController,
-                      hintText: 'Enter Old Password',
+                      hintText: 'Эски сыр сөздү жаз',
                       validator: (val) =>
-                          val!.isEmpty ? 'Enter Old Password' : null,
+                          val!.isEmpty ? 'Эски сыр сөздү жаз' : null,
                     ),
                     vSizedBox3,
                     CustomTextField.customTextField(
                       textEditingController: newPassController,
-                      hintText: 'Enter New Password',
+                      hintText: 'Жаңы сыр сөз жаз',
                       validator: (val) =>
-                          val!.isEmpty ? 'Enter New Password' : null,
+                          val!.isEmpty ? 'Жаңы сыр сөз жаз' : null,
                     ),
                     vSizedBox3,
                     MaterialButton(
@@ -80,7 +80,7 @@ class ChangePasswordScreen extends StatelessWidget {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackUtil.stylishSnackBar(
                                     text:
-                                        'Password Changed , Please Login Again',
+                                        'Сыр сөз алмашты. Кайрадан кириңиз...',
                                     context: context),
                               );
                               DeleteCache.deleteKey(AppKeys.userData)
@@ -92,7 +92,7 @@ class ChangePasswordScreen extends StatelessWidget {
                             if (!value) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackUtil.stylishSnackBar(
-                                    text: 'Ehh Wrong Pass', context: context),
+                                    text: 'Ката', context: context),
                               );
                             }
                           });
@@ -100,7 +100,7 @@ class ChangePasswordScreen extends StatelessWidget {
                       },
                       color: AppColors.rawSienna,
                       child: const Text(
-                        'Change',
+                        'Өзгөрт',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,

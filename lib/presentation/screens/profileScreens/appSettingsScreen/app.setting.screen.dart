@@ -22,7 +22,7 @@ class AppSettings extends StatelessWidget {
               children: [
                 CustomBackPop(themeFlag: themeFlag),
                 Text(
-                  'App Settings',
+                  'Жөндөөлөр',
                   style: CustomTextWidget.bodyTextB2(
                     color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                   ),
@@ -34,7 +34,7 @@ class AppSettings extends StatelessWidget {
                 return SwitchListTile(
                   contentPadding: const EdgeInsets.only(left: 16, right: 4),
                   title: const Text(
-                    'Dark Mode',
+                    'Караңгы Mode',
                     style: TextStyle(
                       fontSize: 15,
                     ),
@@ -51,7 +51,7 @@ class AppSettings extends StatelessWidget {
             Divider(height: 0, color: Colors.grey[400]),
             vSizedBox2,
             Text(
-              'App Version',
+              'Тиркеменин версиясы',
               style: TextStyle(
                   fontSize: 14,
                   color: themeFlag ? AppColors.creamColor : AppColors.mirage),

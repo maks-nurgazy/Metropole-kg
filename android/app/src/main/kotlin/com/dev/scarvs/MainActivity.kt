@@ -1,4 +1,4 @@
-package com.dev.scarvs
+package com.dev.metropole
 
 import io.flutter.embedding.android.FlutterActivity
 

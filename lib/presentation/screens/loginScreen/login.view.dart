@@ -67,9 +67,9 @@ class LoginScreen extends StatelessWidget {
                               const EdgeInsets.fromLTRB(35.0, 0.0, 35.0, 2.0),
                           child: CustomTextField.customTextField(
                             textEditingController: userPassController,
-                            hintText: 'Сыр созунуз',
+                            hintText: 'Сыр сөзүңүз',
                             validator: (val) =>
-                                val!.isEmpty ? 'Сыр созунуз' : null,
+                                val!.isEmpty ? 'Сыр сөзүңүз' : null,
                           ),
                         )
                       ],
@@ -87,7 +87,7 @@ class LoginScreen extends StatelessWidget {
                     },
                     color: AppColors.rawSienna,
                     child: const Text(
-                      'Кируу',
+                      'Кирүү',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 17,

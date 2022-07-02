@@ -36,7 +36,7 @@ class AccountInformationScreen extends StatelessWidget {
                           children: [
                             CustomBackPop(themeFlag: themeFlag),
                             Text(
-                              'User Profile',
+                              'Профиль',
                               style: CustomTextWidget.bodyTextB2(
                                 color: themeFlag
                                     ? AppColors.creamColor
@@ -71,7 +71,7 @@ class AccountInformationScreen extends StatelessWidget {
                         ),
                         const SizedBox(height: 40),
                         const Text(
-                          'Name',
+                          'Аты',
                         ),
                         const SizedBox(
                           height: 8,
@@ -105,7 +105,7 @@ class AccountInformationScreen extends StatelessWidget {
                           height: 24,
                         ),
                         const Text(
-                          'Address ',
+                          'Дареги ',
                         ),
                         const SizedBox(
                           height: 8,
@@ -122,7 +122,7 @@ class AccountInformationScreen extends StatelessWidget {
                           height: 24,
                         ),
                         const Text(
-                          'Phone ',
+                          'Теелфону: ',
                         ),
                         const SizedBox(
                           height: 8,

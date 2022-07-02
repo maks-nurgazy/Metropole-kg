@@ -39,34 +39,25 @@ class BrandWidget extends StatelessWidget {
             arguments: CategoryScreenArgs(categoryName: text),
           );
         },
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-              side: BorderSide(
-                color: Colors.grey.withOpacity(0.2),
-                width: 1,
+        child: SizedBox(
+          height: 180,
+          width: 130,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.08,
+                width: MediaQuery.of(context).size.width * 0.25,
+                child: Image.network(images),
               ),
-            ),
-            elevation: 6,
-            color: themeFlag ? AppColors.mirage : AppColors.creamColor,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.14,
-                  width: MediaQuery.of(context).size.width * 0.38,
-                  child: Image.network(images),
+              vSizedBox1,
+              Text(
+                text,
+                style: CustomTextWidget.bodyText2(
+                  color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                 ),
-                vSizedBox1,
-                Text(
-                  text,
-                  style: CustomTextWidget.bodyText2(
-                    color: themeFlag ? AppColors.creamColor : AppColors.mirage,
-                  ),
-                )
-              ],
-            ),
+              )
+            ],
           ),
         ),
       );
@@ -77,7 +68,7 @@ class BrandWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Brands We Have',
+          'Бренддер',
           style: CustomTextWidget.bodyTextB2(
             color: themeFlag ? AppColors.creamColor : AppColors.mirage,
           ),

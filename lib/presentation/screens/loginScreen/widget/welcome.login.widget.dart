@@ -33,7 +33,7 @@ Widget welcomeTextLogin({required bool themeFlag}) {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: 'Аккаунтка кируу ',
+                    text: 'Аккаунтка кирүү ',
                     style: TextStyle(
                       color:
                           themeFlag ? AppColors.creamColor : AppColors.mirage,
@@ -42,7 +42,7 @@ Widget welcomeTextLogin({required bool themeFlag}) {
                     ),
                   ),
                   TextSpan(
-                    text: 'учун ',
+                    text: 'үчүн ',
                     style: TextStyle(
                       color:
                           themeFlag ? AppColors.creamColor : AppColors.mirage,
@@ -51,7 +51,7 @@ Widget welcomeTextLogin({required bool themeFlag}) {
                     ),
                   ),
                   TextSpan(
-                    text: 'боштукту толтурунуз ! ',
+                    text: 'боштукту толтуруңуз ! ',
                     style: TextStyle(
                       color:
                           themeFlag ? AppColors.creamColor : AppColors.mirage,

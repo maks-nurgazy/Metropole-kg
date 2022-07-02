@@ -70,7 +70,7 @@ class CategoryScreen extends StatelessWidget {
                             return customLoader(
                               context: context,
                               themeFlag: themeFlag,
-                              text: 'No Stock Available',
+                              text: 'Азырынча кампада жок',
                               lottieAsset: AppAssets.error,
                             );
                           } else {

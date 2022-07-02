@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metropole/app/constants/app.colors.dart';
 import 'package:metropole/app/routes/app.routes.dart';
+import 'package:metropole/common_functions.dart';
 import 'package:metropole/core/models/product.model.dart';
 import 'package:metropole/presentation/screens/productDetailScreen/product.detail.screen.dart';
 import 'package:metropole/presentation/widgets/custom.text.style.dart';
@@ -86,7 +87,9 @@ Widget _showProducts(
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  '₹  ${prod.productPrice}',
+                  '${getProductPrice({
+                        'value': int.parse(prod.productPrice)
+                      })} сом',
                   style: CustomTextWidget.bodyText3(
                     color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                   ),

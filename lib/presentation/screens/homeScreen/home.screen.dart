@@ -15,26 +15,26 @@ import 'package:metropole/presentation/screens/searchScreen/search.screen.dart';
 final List<SalomonBottomBarItem> bottomNavBarIcons = [
   SalomonBottomBarItem(
     icon: const Icon(Icons.home),
-    title: const Text("Home"),
+    title: const Text(''),
     selectedColor: Colors.purple,
   ),
 
   /// Search
   SalomonBottomBarItem(
     icon: const Icon(Icons.search),
-    title: const Text("Search"),
+    title: const Text("Издөө"),
     selectedColor: Colors.orange,
   ),
 
   SalomonBottomBarItem(
     icon: const Icon(EvaIcons.shoppingCart),
-    title: const Text("Cart"),
+    title: const Text("Себет"),
     selectedColor: Colors.teal,
   ),
 
   SalomonBottomBarItem(
     icon: const Icon(EvaIcons.person),
-    title: const Text("Profile"),
+    title: const Text("Профиль"),
     selectedColor: Colors.amber,
   ),
 ];

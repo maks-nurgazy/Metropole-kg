@@ -68,7 +68,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                   color: AppColors.rawSienna,
                                 ),
                               ),
-                              hintText: 'Search......',
+                              hintText: 'Издөө...',
                               hintStyle: CustomTextWidget.bodyText2(
                                 color: themeFlag
                                     ? AppColors.creamColor
@@ -102,7 +102,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         themeFlag: themeFlag)
                     : Center(
                         child: Text(
-                          'Search Any Product',
+                          'Каалаган нерсеңди изде',
                           style: CustomTextWidget.bodyText2(
                             color: themeFlag
                                 ? AppColors.creamColor
@@ -139,7 +139,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     return customLoader(
                       context: context,
                       themeFlag: themeFlag,
-                      text: 'No Product Found !',
+                      text: 'Эч нерсе табылбады !',
                       lottieAsset: AppAssets.error,
                     );
                   } else {

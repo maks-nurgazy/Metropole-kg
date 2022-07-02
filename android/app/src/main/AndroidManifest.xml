@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dev.scarvs">
+    package="com.dev.metropole">
        <uses-permission android:name="android.permission.INTERNET"/>
  
    <application
-        android:label="Scarvs"
+        android:label="metropole"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

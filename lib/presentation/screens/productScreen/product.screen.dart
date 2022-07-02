@@ -59,19 +59,21 @@ class ProductScreen extends StatelessWidget {
                                   color: AppColors.creamColor),
                             ),
                             Text(
-                              'Упай топтоо учун ойноо',
+                              'Упай топто! Жеңилдик ал!',
                               style: CustomTextWidget.bodyTextB3(
-                                  color: AppColors.creamColor),
+                                color: AppColors.creamColor,
+                              ),
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     primary: AppColors.creamColor,
                                     enableFeedback: true,
                                     padding: const EdgeInsets.symmetric(
-                                      horizontal: 20,
+                                      horizontal: 26,
                                       vertical: 2,
                                     ),
                                     shape: RoundedRectangleBorder(
@@ -93,7 +95,9 @@ class ProductScreen extends StatelessWidget {
                                 SizedBox(
                                   height: 115,
                                   width: 180,
-                                  child: Image.asset(AppAssets.homeJordan),
+                                  child: Image.network(
+                                    AppAssets.joystickImage,
+                                  ),
                                 ),
                               ],
                             )
@@ -105,7 +109,7 @@ class ProductScreen extends StatelessWidget {
                     const BrandWidget(),
                     vSizedBox2,
                     Text(
-                      'Exclusive Shoes',
+                      'Эксклюзив',
                       style: CustomTextWidget.bodyTextB2(
                         color:
                             themeFlag ? AppColors.creamColor : AppColors.mirage,
@@ -127,7 +131,7 @@ class ProductScreen extends StatelessWidget {
                               } else if (!snapshot.hasData) {
                                 return Center(
                                   child: Text(
-                                    'Some Error Occurred...',
+                                    'Ката чыкты...',
                                     style: CustomTextWidget.bodyTextUltra(
                                       color: themeFlag
                                           ? AppColors.creamColor

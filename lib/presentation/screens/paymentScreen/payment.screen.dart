@@ -21,7 +21,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
     return Scaffold(
       backgroundColor: themeFlag ? AppColors.mirage : AppColors.creamColor,
       body: const Center(
-        child: Text('Payment will be available soon...'),
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Text(
+            'Карта менен төлөө мүмкүнчүлүгү толук ишке кирип баштаганда кошулат',
+            textAlign: TextAlign.center,
+          ),
+        ),
       ),
     );
   }

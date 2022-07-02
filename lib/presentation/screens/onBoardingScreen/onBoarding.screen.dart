@@ -12,19 +12,19 @@ class OnBoardingScreen extends StatefulWidget {
   final List<OnBoardingModel> cards = [
     OnBoardingModel(
       image: AppAssets.onBoardingTwo,
-      title: "Жонокой жана оной",
+      title: "Жөнөкөй жана оңой",
       bgColor: AppColors.creamColor,
       textColor: AppColors.mirage,
     ),
     OnBoardingModel(
       image: AppAssets.onboardingVideoGame,
-      title: "Кунумдук упайлар",
+      title: "Күнүмдүк упайлар",
       textColor: Colors.white,
       bgColor: AppColors.mirage,
     ),
     OnBoardingModel(
       image: AppAssets.onBoardingThree,
-      title: "Онлайн толомдор",
+      title: "Онлайн төлөмдөр",
       bgColor: AppColors.rawSienna,
       textColor: Colors.white,
     ),

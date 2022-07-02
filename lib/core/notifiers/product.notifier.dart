@@ -26,8 +26,7 @@ class ProductNotifier with ChangeNotifier {
       }
     } on SocketException catch (_) {
       ScaffoldMessenger.of(context).showSnackBar(SnackUtil.stylishSnackBar(
-          text: 'Oops No You Need A Good Internet Connection',
-          context: context));
+          text: 'Интернет байланышы начар!', context: context));
     }
   }
 
@@ -49,8 +48,7 @@ class ProductNotifier with ChangeNotifier {
     } on SocketException catch (_) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackUtil.stylishSnackBar(
-            text: 'Oops No You Need A Good Internet Connection',
-            context: context),
+            text: 'Интернет байланышы начар!', context: context),
       );
     }
   }
@@ -73,8 +71,7 @@ class ProductNotifier with ChangeNotifier {
       }
     } on SocketException catch (_) {
       ScaffoldMessenger.of(context).showSnackBar(SnackUtil.stylishSnackBar(
-          text: 'Oops No You Need A Good Internet Connection',
-          context: context));
+          text: 'Интернет байланышы начар!', context: context));
     }
   }
 
@@ -95,8 +92,7 @@ class ProductNotifier with ChangeNotifier {
       }
     } on SocketException catch (_) {
       ScaffoldMessenger.of(context).showSnackBar(SnackUtil.stylishSnackBar(
-          text: 'Oops No You Need A Good Internet Connection',
-          context: context));
+          text: 'Интернет байланышы начар!', context: context));
     }
   }
 }

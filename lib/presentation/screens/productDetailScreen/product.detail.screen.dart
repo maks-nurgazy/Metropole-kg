@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'package:metropole/app/constants/app.assets.dart';
 import 'package:metropole/app/constants/app.colors.dart';
 import 'package:metropole/core/models/productID.model.dart';
@@ -43,14 +42,14 @@ class _ProductDetailState extends State<ProductDetail> {
                         context: context,
                         themeFlag: themeFlag,
                         lottieAsset: AppAssets.onBoardingOne,
-                        text: 'Please Wait Till It Loads'),
+                        text: 'Сураныч күтө туруңуз...'),
                   );
                 } else if (!snapshot.hasData) {
                   return Center(
                     child: customLoader(
                       context: context,
                       themeFlag: themeFlag,
-                      text: 'Oops Some Error Occurred',
+                      text: 'Кечиресиз, ката чыкты...',
                       lottieAsset: AppAssets.error,
                     ),
                   );

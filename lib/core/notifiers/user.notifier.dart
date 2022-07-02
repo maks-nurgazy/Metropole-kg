@@ -14,16 +14,16 @@ import 'package:metropole/core/utils/snackbar.util.dart';
 class UserNotifier with ChangeNotifier {
   final UserAPI _userAPI = UserAPI();
 
-  String? userEmail = 'Not Available';
+  String? userEmail = 'Жеткиликтүү эмес';
   String? get getUserEmail => userEmail;
 
   String? userName;
   String? get getUserName => userName;
 
-  String userAddress = 'Not Available';
+  String userAddress = 'Жеткиликтүү эмес';
   String get getuserAddress => userAddress;
 
-  String userPhoneNumber = 'Not Available';
+  String userPhoneNumber = 'Жеткиликтүү эмес';
   String get getuserPhoneNumber => userPhoneNumber;
 
   Future getUserData({
@@ -46,7 +46,7 @@ class UserNotifier with ChangeNotifier {
                 DeleteCache.deleteKey(AppKeys.userData).whenComplete(() {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackUtil.stylishSnackBar(
-                        text: 'Oops Session Timeout', context: context),
+                        text: 'Башынан кириңиз', context: context),
                   );
                 })
               },
@@ -59,8 +59,7 @@ class UserNotifier with ChangeNotifier {
     } on SocketException catch (_) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackUtil.stylishSnackBar(
-            text: 'Oops No You Need A Good Internet Connection',
-            context: context),
+            text: 'Интернет байланышы начар!', context: context),
       );
     }
   }
@@ -86,8 +85,7 @@ class UserNotifier with ChangeNotifier {
     } on SocketException catch (_) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackUtil.stylishSnackBar(
-            text: 'Oops No You Need A Good Internet Connection',
-            context: context),
+            text: 'Интернет байланышы начар!', context: context),
       );
     }
   }
@@ -111,8 +109,7 @@ class UserNotifier with ChangeNotifier {
     } on SocketException catch (_) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackUtil.stylishSnackBar(
-            text: 'Oops No You Need A Good Internet Connection',
-            context: context),
+            text: 'Интернет байланышы начар!', context: context),
       );
     }
   }
@@ -138,8 +135,7 @@ class UserNotifier with ChangeNotifier {
     } on SocketException catch (_) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackUtil.stylishSnackBar(
-            text: 'Oops No You Need A Good Internet Connection',
-            context: context),
+            text: 'Интернет байланышы начар!', context: context),
       );
     }
   }

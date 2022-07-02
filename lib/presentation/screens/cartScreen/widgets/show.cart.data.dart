@@ -8,6 +8,8 @@ import 'package:metropole/core/service/payment.service.dart';
 import 'package:metropole/core/utils/snackbar.util.dart';
 import 'package:metropole/presentation/widgets/custom.text.style.dart';
 
+import '../../../../common_functions.dart';
+
 Widget showCartData({
   required snapshot,
   required themeFlag,
@@ -60,11 +62,11 @@ Widget cartPrice({
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       const Text(
-        'Total',
+        'Жалпы',
         style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
       ),
       Text(
-        '₹ $cartPrice',
+        '${getProductPrice({'value': cartPrice})} сом',
         style: CustomTextWidget.bodyText2(
           color: themeFlag ? AppColors.creamColor : AppColors.mirage,
         ),
@@ -80,7 +82,7 @@ Widget cartPrice({
         },
         color: AppColors.rawSienna,
         child: const Text(
-          'Pay Now',
+          'Төлөө',
           style: TextStyle(
             color: Colors.white,
             fontSize: 17,
@@ -132,7 +134,9 @@ Widget _showCartData({
               Container(
                 margin: const EdgeInsets.only(top: 5),
                 child: Text(
-                  '₹  ${cart.productPrice}',
+                  '${getProductPrice({
+                        'value': int.parse(cart.productPrice)
+                      })} сом',
                   style: CustomTextWidget.bodyText2(
                     color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                   ),
@@ -180,7 +184,7 @@ void deleteItemFromCart(
       Navigator.pop(context);
     },
     child: Text(
-      'No',
+      'Жок',
       style: TextStyle(
         color: themeFlag ? AppColors.creamColor : AppColors.mirage,
       ),
@@ -196,14 +200,14 @@ void deleteItemFromCart(
           cartNotifier.refresh();
           ScaffoldMessenger.of(context).showSnackBar(
             SnackUtil.stylishSnackBar(
-              text: 'Deleted From Cart',
+              text: 'Себеттен алынды',
               context: context,
             ),
           );
         } else if (!value) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackUtil.stylishSnackBar(
-              text: 'Oops Error Occured',
+              text: 'Ката чыкты',
               context: context,
             ),
           );
@@ -211,7 +215,7 @@ void deleteItemFromCart(
       });
     },
     child: Text(
-      'Yes',
+      'Ооба',
       style: TextStyle(
         color: themeFlag ? AppColors.creamColor : AppColors.mirage,
       ),
@@ -224,10 +228,10 @@ void deleteItemFromCart(
       borderRadius: BorderRadius.circular(10),
     ),
     title: const Text(
-      'Delete from Cart',
+      'Себеттен өчүрүү',
       style: TextStyle(fontSize: 18),
     ),
-    content: Text('Are you sure to delete this item from your Shopping Cart ?',
+    content: Text('Себеттен өчүрүүнү каалайсызбы?',
         style: TextStyle(
           fontSize: 13,
           color: themeFlag ? AppColors.creamColor : AppColors.mirage,

@@ -56,20 +56,20 @@ class SignUpScreen extends StatelessWidget {
                               const EdgeInsets.fromLTRB(35.0, 10.0, 35.0, 2.0),
                           child: CustomTextField.customTextField(
                               textEditingController: userNameController,
-                              hintText: 'Enter User Name',
+                              hintText: 'Колдонуучу атын жаз',
                               validator: (val) =>
-                                  val!.isEmpty ? 'Enter an Username' : null),
+                                  val!.isEmpty ? 'Колдонуучу атын жаз' : null),
                         ),
                         Padding(
                           padding:
                               const EdgeInsets.fromLTRB(35.0, 10.0, 35.0, 2.0),
                           child: CustomTextField.customTextField(
                             textEditingController: userEmailController,
-                            hintText: 'Enter an email',
+                            hintText: 'email жаз',
                             validator: (val) =>
                                 !RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
                                         .hasMatch(val!)
-                                    ? 'Enter an email'
+                                    ? 'email жаз'
                                     : null,
                           ),
                         ),
@@ -82,9 +82,9 @@ class SignUpScreen extends StatelessWidget {
                                   .checkPasswordStrength(password: val);
                             },
                             textEditingController: userPassController,
-                            hintText: 'Enter a Password',
+                            hintText: 'Сыр сөздү жаз',
                             validator: (val) =>
-                                val!.isEmpty ? 'Enter a password' : null,
+                                val!.isEmpty ? 'Сыр сөздү жаз' : null,
                           ),
                         ),
                       ],
@@ -152,7 +152,7 @@ class SignUpScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Already Having A Account? ",
+                  "Аккаунт барбы? ",
                   style: TextStyle(
                     color: themeFlag ? AppColors.creamColor : AppColors.mirage,
                     fontSize: 14.0,
@@ -162,7 +162,7 @@ class SignUpScreen extends StatelessWidget {
                   onTap: () =>
                       Navigator.of(context).pushNamed(AppRouter.loginRoute),
                   child: Text(
-                    "Login now",
+                    "Кирүү",
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                       color:

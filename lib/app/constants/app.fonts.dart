@@ -1,3 +1,3 @@
 class AppFonts {
-  static const String contax = "Contax";
+  static const String contax = "Roboto";
 }

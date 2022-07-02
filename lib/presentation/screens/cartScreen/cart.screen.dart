@@ -45,7 +45,7 @@ class _CartScreenState extends State<CartScreen> {
                     themeFlag: themeFlag,
                   ),
                   Text(
-                    'Cart',
+                    'Себет',
                     style: CustomTextWidget.bodyTextB2(
                       color:
                           themeFlag ? AppColors.creamColor : AppColors.mirage,
@@ -67,7 +67,7 @@ class _CartScreenState extends State<CartScreen> {
                           return customLoader(
                             context: context,
                             themeFlag: themeFlag,
-                            text: 'Eww Cart is Empty',
+                            text: 'Азырынча себет бош',
                             lottieAsset: AppAssets.nodata,
                           );
                         } else {

@@ -13,6 +13,8 @@ import 'package:metropole/presentation/widgets/custom.back.btn.dart';
 import 'package:metropole/presentation/widgets/custom.text.style.dart';
 import 'package:metropole/presentation/widgets/dimensions.widget.dart';
 
+import '../../../../common_functions.dart';
+
 Widget productUI({
   required BuildContext context,
   required bool themeFlag,
@@ -71,7 +73,7 @@ Widget productUI({
       ),
       vSizedBox2,
       Text(
-        'Choose Size',
+        'Өлчөмүңүз',
         style: CustomTextWidget.bodyTextB4(
           color: themeFlag ? AppColors.creamColor : AppColors.mirage,
         ),
@@ -83,12 +85,15 @@ Widget productUI({
         child: selectSize(context: context, themeFlag: themeFlag),
       ),
       Padding(
-        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+        padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              '₹ ${snapshot.productPrice}',
+              '${getProductPrice({
+                    'value': int.parse(snapshot.productPrice)
+                  })} сом',
+              // '${snapshot.productPrice} сом',
               style: CustomTextWidget.bodyTextUltra(
                 color: themeFlag ? AppColors.creamColor : AppColors.mirage,
               ),
@@ -120,7 +125,7 @@ Widget productUI({
                   if (value) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackUtil.stylishSnackBar(
-                        text: 'Added To Cart',
+                        text: 'Себетке кошулду',
                         context: context,
                       ),
                     );
@@ -128,7 +133,7 @@ Widget productUI({
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackUtil.stylishSnackBar(
-                        text: 'Oops Something Went Wrong',
+                        text: 'Ой, ката чыкты!',
                         context: context,
                       ),
                     );
@@ -136,9 +141,10 @@ Widget productUI({
                 });
               },
               child: Text(
-                'Add To Cart',
-                style: CustomTextWidget.bodyTextB2(
+                'Себетке кошуу',
+                style: TextStyle(
                   color: themeFlag ? AppColors.mirage : AppColors.creamColor,
+                  fontSize: 16,
                 ),
               ),
             ),

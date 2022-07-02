@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const double vBox1 = 10.0;
+const double vBox1 = 8.0;
 const double vBox2 = 20.0;
 const double vBox3 = 40.0;
 const double vBox4 = 80.0;

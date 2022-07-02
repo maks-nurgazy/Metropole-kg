@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metropole/app/constants/app.colors.dart';
 import 'package:metropole/app/routes/app.routes.dart';
+import 'package:metropole/common_functions.dart';
 import 'package:metropole/core/models/product.model.dart';
 import 'package:metropole/presentation/screens/productDetailScreen/product.detail.screen.dart';
 import 'package:metropole/presentation/widgets/custom.text.style.dart';
@@ -34,52 +35,58 @@ Widget productForYou(
             ),
             elevation: 6,
             color: themeFlag ? AppColors.mirage : AppColors.creamColor,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Hero(
-                  tag: Key(prod.productId.toString()),
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    width: MediaQuery.of(context).size.height * 0.165,
-                    child: Image.network(
-                      prod.productImage,
-                      fit: BoxFit.scaleDown,
+            child: Container(
+              width: 150,
+              height: 200,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Hero(
+                    tag: Key(prod.productId.toString()),
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.15,
+                      width: MediaQuery.of(context).size.height * 0.165,
+                      child: Image.network(
+                        prod.productImage,
+                        fit: BoxFit.scaleDown,
+                      ),
                     ),
                   ),
-                ),
-                vSizedBox1,
-                Container(
-                  margin: const EdgeInsets.fromLTRB(8, 8, 8, 8),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        prod.productName,
-                        style: CustomTextWidget.bodyText3(
-                          color: themeFlag
-                              ? AppColors.creamColor
-                              : AppColors.mirage,
+                  vSizedBox1,
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          prod.productName,
+                          style: CustomTextWidget.bodyText3(
+                            color: themeFlag
+                                ? AppColors.creamColor
+                                : AppColors.mirage,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      Text(
-                        '₹  ${prod.productPrice}',
-                        style: CustomTextWidget.bodyText3(
-                          color: themeFlag
-                              ? AppColors.creamColor
-                              : AppColors.mirage,
+                        Text(
+                          '${getProductPrice({
+                                'value': int.parse(prod.productPrice)
+                              })} сом',
+                          style: CustomTextWidget.bodyText3(
+                            color: themeFlag
+                                ? AppColors.creamColor
+                                : AppColors.mirage,
+                          ),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
