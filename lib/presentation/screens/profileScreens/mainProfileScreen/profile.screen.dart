@@ -18,6 +18,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeNotifier _themeNotifier = Provider.of<ThemeNotifier>(context);
+    final userNotifier = Provider.of<UserNotifier>(context, listen: false);
 
     var themeFlag = _themeNotifier.darkTheme;
     return SafeArea(
@@ -49,24 +50,37 @@ class ProfileScreen extends StatelessWidget {
                     themeFlag: themeFlag,
                   ),
                   const SizedBox(height: 10),
-                  Card(
-                    child: const ListTile(
-                      title: Text("Топтолгон упай"),
-                      trailing: Text(
-                        '20',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                    elevation: 8,
-                    shadowColor: Colors.green,
-                    // margin: const EdgeInsets.all(20),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide:
-                            const BorderSide(color: Colors.green, width: 1)),
-                  ),
+                  Consumer<UserNotifier>(builder: (context, notifier, _) {
+                    return FutureBuilder(
+                        future: notifier.getUserDetails(
+                            userEmail: userNotifier.userEmail!,
+                            context: context),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasData) {
+                            print('printing balance');
+                            print(snapshot.data);
+                          }
+
+                          return Card(
+                            child: const ListTile(
+                              title: Text("Топтолгон упай"),
+                              trailing: Text(
+                                '20',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ),
+                            elevation: 8,
+                            shadowColor: Colors.green,
+                            // margin: const EdgeInsets.all(20),
+                            shape: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: const BorderSide(
+                                    color: Colors.green, width: 1)),
+                          );
+                        });
+                  }),
                   const SizedBox(height: 20),
                   GestureDetector(
                     behavior: HitTestBehavior.translucent,
@@ -212,6 +226,7 @@ class ProfileScreen extends StatelessWidget {
     final userNotifier = Provider.of<UserNotifier>(context, listen: false);
     var userName = userNotifier.getUserName ?? 'Wait';
     final double profilePictureSize = MediaQuery.of(context).size.width / 4;
+
     return Container(
       margin: const EdgeInsets.only(bottom: 14),
       child: Row(

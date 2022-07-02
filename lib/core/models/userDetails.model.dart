@@ -63,12 +63,14 @@ class User {
   late final String username;
   late final String useremail;
   late final String userpassword;
+  late final int balance;
 
   User.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     username = json['username'];
     useremail = json['useremail'];
     userpassword = json['userpassword'];
+    balance = json['balance'];
   }
 
   Map<String, dynamic> toJson() {

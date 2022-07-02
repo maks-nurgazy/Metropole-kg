@@ -20,6 +20,9 @@ class UserNotifier with ChangeNotifier {
   String? userName;
   String? get getUserName => userName;
 
+  int? balance;
+  int? get getBalance => balance;
+
   String userAddress = 'Жеткиликтүү эмес';
   String get getuserAddress => userAddress;
 
@@ -80,6 +83,7 @@ class UserNotifier with ChangeNotifier {
         userPhoneNumber = _data.userPhoneNo;
         userEmail = _data.user.useremail;
         userName = _data.user.username;
+        balance = _data.user.balance;
         notifyListeners();
       }
     } on SocketException catch (_) {
