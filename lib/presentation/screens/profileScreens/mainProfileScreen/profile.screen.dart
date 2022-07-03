@@ -50,26 +50,17 @@ class ProfileScreen extends StatelessWidget {
                     themeFlag: themeFlag,
                   ),
                   const SizedBox(height: 10),
-                  Consumer<UserNotifier>(builder: (context, notifier, _) {
-                    return FutureBuilder(
-                        future: notifier.getUserDetails(
-                            userEmail: userNotifier.userEmail!,
-                            context: context),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData) {
-                            print('printing balance');
-                            print(snapshot.data);
-                          }
-
+                  FutureBuilder(
+                    future: userNotifier.getUserBalance(
+                        userEmail: userNotifier.userEmail!),
+                    initialData: 0,
+                    builder: (context, snapshot) {
+                      switch (snapshot.connectionState) {
+                        case ConnectionState.waiting:
                           return Card(
-                            child: const ListTile(
-                              title: Text("Топтолгон упай"),
-                              trailing: Text(
-                                '20',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
+                            child: ListTile(
+                              title: const Text("Топтолгон упай"),
+                              trailing: Text('${snapshot.data}'),
                             ),
                             elevation: 8,
                             shadowColor: Colors.green,
@@ -79,8 +70,30 @@ class ProfileScreen extends StatelessWidget {
                                 borderSide: const BorderSide(
                                     color: Colors.green, width: 1)),
                           );
-                        });
-                  }),
+                        case ConnectionState.done:
+                        default:
+                          if (snapshot.hasError) {
+                            return Text('${snapshot.error}');
+                          } else if (snapshot.hasData) {
+                            return Card(
+                              child: ListTile(
+                                title: const Text("Топтолгон упай"),
+                                trailing: Text('${snapshot.data}'),
+                              ),
+                              elevation: 8,
+                              shadowColor: Colors.green,
+                              // margin: const EdgeInsets.all(20),
+                              shape: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                      color: Colors.green, width: 1)),
+                            );
+                          } else {
+                            return const Text('No data');
+                          }
+                      }
+                    },
+                  ),
                   const SizedBox(height: 20),
                   GestureDetector(
                     behavior: HitTestBehavior.translucent,

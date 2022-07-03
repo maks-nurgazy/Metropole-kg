@@ -67,6 +67,32 @@ class UserNotifier with ChangeNotifier {
     }
   }
 
+  Future getUserBalance({
+    required String userEmail,
+  }) async {
+    try {
+      var userData = await _userAPI.getUserDetails(userEmail: userEmail);
+      var response = UserDetails.fromJson(jsonDecode(userData));
+      final _data = response.data;
+      final _filled = response.filled;
+      final _received = response.received;
+
+      if (_received && _filled) {
+        userAddress = _data.userAddress;
+        userPhoneNumber = _data.userPhoneNo;
+        userEmail = _data.user.useremail;
+        userName = _data.user.username;
+        balance = _data.user.balance;
+
+        return balance;
+      }
+
+      return 0;
+    } on SocketException catch (_) {
+      throw 'Error';
+    }
+  }
+
   Future getUserDetails({
     required String userEmail,
     required BuildContext context,
