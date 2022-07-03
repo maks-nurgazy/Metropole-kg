@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:metropole/app/routes/api.routes.dart';
 import 'package:metropole/app/routes/app.routes.dart';
+import 'package:metropole/core/notifiers/user.notifier.dart';
+import 'package:provider/provider.dart';
 import 'widgets/fortune_wheel.dart';
 
 class GameScreen extends StatefulWidget {
@@ -35,11 +37,24 @@ class _GameScreenState extends State<GameScreen> {
         currentBalance += fortuneWheelController.value!.value;
       });
     });
+
+    () async {
+      final userNotifier = Provider.of<UserNotifier>(context, listen: false);
+      setState(() {
+        currentBalance = userNotifier.getBalance ?? 0;
+      });
+    }();
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    if (!fortuneWheelController.isAnimating) {
+      final userNotifier = Provider.of<UserNotifier>(context, listen: false);
+      userNotifier.updateUserBalance(
+          balance: currentBalance, userEmail: userNotifier.getUserEmail!);
+    }
     return SafeArea(
       child: Scaffold(
         body: Container(

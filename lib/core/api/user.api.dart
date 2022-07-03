@@ -37,6 +37,26 @@ class UserAPI {
     return body;
   }
 
+  Future updateUserBalance({
+    required String userEmail,
+    required int balance,
+  }) async {
+    const subUrl = '/balance/top';
+    final Uri uri = Uri.parse(ApiRoutes.baseurl + subUrl);
+    final http.Response response = await client.put(uri,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Access-Control-Allow-Origin': "*",
+        },
+        body: jsonEncode({
+          "useremail": userEmail,
+          "balance": balance,
+        }));
+    final dynamic body = response.body;
+    return body;
+  }
+
   Future updateUserDetails(
       {required String userEmail,
       required String userAddress,

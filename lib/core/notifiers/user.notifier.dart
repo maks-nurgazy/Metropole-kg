@@ -67,6 +67,22 @@ class UserNotifier with ChangeNotifier {
     }
   }
 
+  Future updateUserBalance({
+    required String userEmail,
+    required int balance,
+  }) async {
+    try {
+      var userData = await _userAPI.updateUserBalance(
+          userEmail: userEmail, balance: balance);
+
+      print(userData);
+
+      return 0;
+    } on SocketException catch (_) {
+      throw 'Error';
+    }
+  }
+
   Future getUserBalance({
     required String userEmail,
   }) async {
